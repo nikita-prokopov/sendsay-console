@@ -7,7 +7,7 @@ API-консоль состоит из формы авторизации и ин
 
 #### Демо консоли:
 
-`Консоль:` https://nikita-prokopov.github.io/console/  
+`Консоль:` https://nikita-prokopov.github.io/sendsay-console/  
 `UI компоненты консоли:` https://nikita-prokopov.github.io/sendsay-console-ui  
 
 #### Данные для входа в консоль:
