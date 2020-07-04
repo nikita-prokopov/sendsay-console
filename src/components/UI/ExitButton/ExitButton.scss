@@ -1,0 +1,33 @@
+@import '../../../utils/variables.scss';
+@import '../../../utils/mixins/showOutlineOnFocus.scss';
+
+.ExitButton {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+
+  &:hover path,
+  &:focus path {
+    stroke: $color-accent;
+  }
+
+  @include showOutlineOnFocus;
+}
+
+.ExitButton-Icon {
+  margin-left: 8px;
+}

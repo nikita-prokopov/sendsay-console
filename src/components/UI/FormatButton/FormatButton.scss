@@ -1,0 +1,33 @@
+@import '../../../utils/variables.scss';
+@import '../../../utils/mixins/showOutlineOnFocus.scss';
+
+.FormatButton {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+  }
+
+  &:hover path,
+  &:focus path {
+    stroke: $color-accent;
+  }
+
+  @include showOutlineOnFocus;
+}
+
+.FormatButton-Icon {
+  margin-right: 8px;
+}

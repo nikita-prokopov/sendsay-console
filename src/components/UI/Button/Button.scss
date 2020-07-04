@@ -1,0 +1,65 @@
+@import '../../../utils/variables.scss';
+
+.Button {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(180deg, $color-accent-light 0%, $color-accent 100%);
+
+  min-width: 110px;
+  height: 40px;
+
+  padding: 0 15px;
+
+  border-radius: $border-radius-main;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+
+  transition: box-shadow 0.2s;
+
+  &:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)),
+      linear-gradient(180deg, $color-accent-light 0%, $color-accent 100%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($color-accent-light, 0.5);
+  }
+
+  &:active {
+    box-shadow: none;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+      linear-gradient(180deg, $color-accent-light 0%, $color-accent 100%);
+  }
+
+  &:disabled {
+    background: #c4c4c4;
+    cursor: default;
+  }
+}
+
+.Button_loading {
+  cursor: default;
+
+  &:disabled {
+    background: linear-gradient(180deg, $color-accent-light 0%, $color-accent 100%);
+  }
+}
+
+.Button-Loader {
+  position: absolute;
+}
+
+.Button-Text_hidden {
+  visibility: hidden;
+}

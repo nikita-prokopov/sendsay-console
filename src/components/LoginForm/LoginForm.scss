@@ -1,0 +1,33 @@
+@import '../../utils/variables.scss';
+
+.LoginForm {
+  width: 100%;
+  max-width: 525px;
+  min-height: 425px;
+
+  background-color: white;
+
+  border-radius: $border-radius-main;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+  padding: 40px 30px;
+}
+
+.LoginForm-Heading {
+  margin-bottom: 15px;
+
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.LoginForm-TextField {
+  margin-bottom: 20px;
+}
+
+.LoginForm-Alert {
+  margin-bottom: 20px;
+}
+
+.LoginForm-Alert_hidden {
+  display: none;
+}
