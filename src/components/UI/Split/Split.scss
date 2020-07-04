@@ -1,0 +1,22 @@
+.Split {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: 100%;
+}
+
+.Split-Gutter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Split-Gutter:hover circle {
+  fill-opacity: 0.4;
+}
+
+/* Fixes this problem: https://github.com/nathancahill/split/issues/99 */
+.Split-Gutter:hover {
+  cursor: pointer;
+}

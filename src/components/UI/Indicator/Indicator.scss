@@ -1,0 +1,17 @@
+@import '../../../utils/variables.scss';
+
+.Indicator {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(#000000, 0.2);
+}
+
+.Indicator_failed {
+  background-color: $color-fail;
+}
+
+.Indicator_success {
+  background-color: $color-success;
+}

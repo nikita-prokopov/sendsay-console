@@ -1,0 +1,20 @@
+@import '../../../utils/variables.scss';
+
+.Console-Footer {
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px;
+  background-color: white;
+
+  border-top: 1px solid $background-color-divider;
+}
+
+@media (max-width: 525px) {
+  .Footer-GithubLink {
+    display: none;
+  }
+}

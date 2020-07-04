@@ -1,0 +1,19 @@
+@import '../variables.scss';
+
+@mixin showOutlineOnFocus {
+  &::after {
+    display: none;
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    width: calc(100% + 14px);
+    height: calc(100% + 14px);
+    border: 2px solid $color-accent-light;
+    border-radius: 7px;
+  }
+
+  &:focus::after {
+    display: block;
+  }
+}

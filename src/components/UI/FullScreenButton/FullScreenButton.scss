@@ -1,0 +1,28 @@
+@import '../../../utils/variables.scss';
+@import '../../../utils/mixins/showOutlineOnFocus.scss';
+
+.FullScreenButton {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 24px;
+  height: 24px;
+
+  padding: 0;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  &:hover path,
+  &:focus path {
+    stroke: $color-accent;
+  }
+
+  @include showOutlineOnFocus;
+}

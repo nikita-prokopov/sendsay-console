@@ -1,0 +1,59 @@
+@import '../../../utils/variables.scss';
+
+.Dropdown {
+  display: inline-flex;
+  flex-direction: column;
+
+  background-color: white;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  min-width: 135px;
+
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+
+  padding: 5px 0;
+}
+
+.Dropdown-Divider {
+  width: 100%;
+  height: 1px;
+
+  background-color: $background-color-divider;
+  margin: 5px 0;
+}
+
+.Dropdown-Item {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  width: 100%;
+  height: 40px;
+
+  padding: 0 15px;
+
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: $color-accent;
+    color: white;
+  }
+}
+
+.Dropdown-Item_background_red {
+  &:hover,
+  &:focus {
+    background-color: $color-red;
+    color: white;
+  }
+}

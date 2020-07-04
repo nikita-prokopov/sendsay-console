@@ -1,0 +1,13 @@
+@import '../../../utils/variables.scss';
+
+.GithubLink {
+  color: $color-main-light;
+  outline: none;
+
+  transition: color 0.3s;
+
+  &:focus,
+  &:hover {
+    color: $color-main;
+  }
+}

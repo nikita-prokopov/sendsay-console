@@ -1,0 +1,27 @@
+@import '../../utils/variables.scss';
+
+.Console {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: $background-color-secondary;
+}
+
+.Console-FieldsContainer {
+  flex-grow: 1;
+}
+
+@media (max-width: 1355px) {
+  .Console-FieldsContainer {
+    overflow-x: scroll;
+  }
+}
+
+@media (max-height: 545px) {
+  .Console-FieldsContainer {
+    overflow-y: scroll;
+  }
+}
