@@ -1,5 +1,6 @@
 {
   "name": "sendsay-console",
+  "homepage": "http://nikita-prokopov.github.io/sendsay-console",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -30,7 +31,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
