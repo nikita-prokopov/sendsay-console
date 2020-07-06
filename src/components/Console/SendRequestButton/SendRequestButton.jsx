@@ -21,7 +21,7 @@ const SendRequestButton = ({
       onClick={handleClick}
       className='Console-SendRequestButton'
       isLoading={isLoading}
-      disabled={!isFieldsValid || isStringEmpty(requestValue)}
+      isDisabled={!isFieldsValid || isStringEmpty(requestValue)}
     >
       {children}
     </UIButton>

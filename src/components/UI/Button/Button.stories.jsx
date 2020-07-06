@@ -16,7 +16,7 @@ export const Loading = () => (
 );
 
 export const Disabled = () => (
-  <Button onClick={action('onClick')} disabled>
+  <Button onClick={action('onClick')} isDisabled>
     Войти
   </Button>
 );

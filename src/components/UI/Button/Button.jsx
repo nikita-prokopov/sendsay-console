@@ -6,12 +6,12 @@ import './Button.scss';
 
 const classes = cn('Button');
 
-const Button = React.memo(({ children, disabled, isLoading, onClick, type, className }) => {
+const Button = React.memo(({ children, isDisabled, isLoading, onClick, type, className }) => {
   return (
     <button
       className={`${classes({ loading: isLoading })} ${className}`}
       type={type}
-      disabled={disabled || isLoading}
+      disabled={isDisabled || isLoading}
       onClick={onClick}
     >
       {isLoading ? <Loader className={classes('Loader')} /> : null}
@@ -21,7 +21,7 @@ const Button = React.memo(({ children, disabled, isLoading, onClick, type, class
 });
 
 Button.defaultProps = {
-  disabled: false,
+  isDisabled: false,
   isLoading: false,
   type: 'button',
   onClick: null,
@@ -30,7 +30,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  disabled: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   isLoading: PropTypes.bool,
   onClick: PropTypes.func,
   type: PropTypes.string,
