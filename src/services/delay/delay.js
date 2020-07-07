@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-finally */
 /* eslint-disable import/prefer-default-export */
 
 async function delay(ms) {
@@ -6,29 +7,34 @@ async function delay(ms) {
   });
 }
 
-export async function delayIfNeccesary(treshold, func, ...args) {
+export async function delayIfNeccesary(treshold, func) {
   const startTime = new Date();
 
+  let result;
+  let error;
+
   try {
-    const result = await func(...args);
+    result = await func();
+  } catch (err) {
+    error = err;
+  } finally {
     const endTime = new Date();
     const functionExecutionTime = endTime - startTime;
 
     if (functionExecutionTime > treshold) {
+      if (error) {
+        throw error;
+      }
+
       return result;
     }
 
     await delay(treshold - functionExecutionTime);
-    return result;
-  } catch (err) {
-    const endTime = new Date();
-    const functionExecutionTime = endTime - startTime;
 
-    if (functionExecutionTime > treshold) {
-      throw err;
+    if (error) {
+      throw error;
     }
 
-    await delay(treshold - functionExecutionTime);
-    throw err;
+    return result;
   }
 }
