@@ -27,7 +27,7 @@ export default function* fetchRequestValue({ value }) {
   yield put(setRequestLoading(true));
 
   try {
-    const responseObject = yield delayIfNeccesary(600, sendRequest, requestObject);
+    const responseObject = yield delayIfNeccesary(600, sendRequest.bind(null, requestObject));
     const responseJson = JSON.stringify(responseObject);
     const formattedResponseJson = formatJson(responseJson);
 

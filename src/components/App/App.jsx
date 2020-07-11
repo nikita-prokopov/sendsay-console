@@ -6,25 +6,18 @@ import Auth from '../Auth';
 import Console from '../Console';
 import './App.scss';
 
-function App({ page, authFromSession }) {
+const App = ({ page, authFromSession }) => {
   useEffect(() => {
     authFromSession();
   }, [authFromSession]);
 
-  function getPage() {
-    if (page === 'console') {
-      return <Console />;
-    }
-
-    if (page === 'auth') {
-      return <Auth />;
-    }
-
-    return null;
-  }
-
-  return <div className='App'>{getPage()}</div>;
-}
+  return (
+    <div className='App'>
+      {page === 'console' && <Console />}
+      {page === 'auth' && <Auth />}
+    </div>
+  );
+};
 
 App.propTypes = {
   page: PropTypes.string.isRequired,

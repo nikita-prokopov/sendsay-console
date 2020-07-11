@@ -109,7 +109,7 @@ const LoginFormContainer = ({ className, setPage, setUser }) => {
     clearInputs();
 
     try {
-      const user = await delayIfNeccesary(1000, authorization, options);
+      const user = await delayIfNeccesary(1000, authorization.bind(null, options));
       setUser(user);
       clearInputs();
       setIsLoading(false);

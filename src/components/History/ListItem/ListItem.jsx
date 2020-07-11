@@ -72,7 +72,7 @@ const ListItem = ({
             text: 'Выполнить',
           },
           {
-            onClick: () => {
+            onClick() {
               setIsDropdownShown(false);
               saveTextToClipboard(requestJson);
               notifyCopied();

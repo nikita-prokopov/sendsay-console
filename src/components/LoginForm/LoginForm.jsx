@@ -69,7 +69,7 @@ const LoginForm = ({ inputs, isLoading, alert, onSubmit, onChange, className }) 
         type='password'
       />
 
-      <Button type='submit' isLoading={isLoading} disabled={isLoading || isButtonUnavailable()}>
+      <Button type='submit' isLoading={isLoading} isDisabled={isLoading || isButtonUnavailable()}>
         Войти
       </Button>
     </form>
