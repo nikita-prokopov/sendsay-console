@@ -12,9 +12,29 @@ import { formatJson } from '../../services/sendsayFormatter';
 
 const MAX_LENGTH = 15;
 
+// {
+//   history: [1,2],
+//   edntities: {
+//     1: {
+//       actionName: '',
+//       requestJson: '',
+//       responseJson: '',
+//       isSuccess: true,
+//       id: 1,
+//     }
+//     ,2: {
+//       actionName: '',
+//       requestJson: '',
+//       responseJson: '',
+//       isSuccess: true,
+//       id: 2,
+//     }
+//   }
+// }
+
+// https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape
+
 export default function history(state = [], action) {
-  // В Notion написано, что приложение умеет хранить до 15 последних уникальных валидных
-  // В макете написано 20
   switch (action.type) {
     case 'SET_HISTORY':
       return action.history.slice(0, MAX_LENGTH);

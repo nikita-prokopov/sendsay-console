@@ -22,6 +22,7 @@ const ListItem = ({
   function notifyCopied() {
     const textElement = requestButton.current.firstElementChild.firstElementChild.lastElementChild;
 
+    // https://github.com/reactjs/react-transition-group
     const notification = document.createElement('span');
     notification.classList.add('History-Copied');
     notification.textContent = 'Скопировано';

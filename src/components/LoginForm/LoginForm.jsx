@@ -23,6 +23,7 @@ const LoginForm = ({ inputs, isLoading, alert, onSubmit, onChange, className }) 
       return true;
     }
 
+    // belongs to validator
     if (isStringEmpty(login.value) || isStringEmpty(password.value)) {
       return true;
     }
@@ -70,6 +71,7 @@ const LoginForm = ({ inputs, isLoading, alert, onSubmit, onChange, className }) 
       />
 
       <Button type='submit' isLoading={isLoading} isDisabled={isLoading || isButtonUnavailable()}>
+        {/* <Button type='submit' isLoading={isLoading} isDisabled={isLoading || !touched}> */}
         Войти
       </Button>
     </form>

@@ -3,6 +3,8 @@ const initialState = {
   sublogin: '',
 };
 
+// https://redux-toolkit.js.org
+
 export default function user(state = initialState, action) {
   switch (action.type) {
     case 'SET_USER':

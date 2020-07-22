@@ -22,6 +22,7 @@ const SendRequestButton = ({
       className='Console-SendRequestButton'
       isLoading={isLoading}
       isDisabled={!isFieldsValid || isStringEmpty(requestValue)}
+      // isStringEmpty can be computed in selectors "reselect" library
     >
       {children}
     </UIButton>

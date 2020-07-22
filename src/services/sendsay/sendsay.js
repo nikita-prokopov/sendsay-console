@@ -22,6 +22,9 @@ export async function authorization({ login, password, sublogin }) {
     const user = await getUser();
     return user;
   } catch (err) {
+    // throw new Error(handleError(err));
+    // class MyCustomError extends Error {...}
+    // instanceof MyCustomError
     throw handleError(err);
   }
 }

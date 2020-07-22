@@ -1,3 +1,4 @@
+// https://www.npmjs.com/package/react-clip
 const saveTextToClipboard = text => {
   const el = document.createElement('textarea');
   el.value = text;

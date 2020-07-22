@@ -7,6 +7,7 @@ import './TextField.scss';
 
 const classes = cn('TextField');
 
+// no memo optimization unless bad performance
 const TextField = React.memo(
   ({
     isValid,
@@ -49,13 +50,14 @@ const TextField = React.memo(
       );
     }
 
+    // focus input on label click
     return (
       <div className={`${classes()} ${className}`}>
         <div className={classes('TextContainer')}>
           <label
             className={classes('Label', {
               invalid: !isValid,
-              color_grey: labelGrey,
+              color_grey: labelGrey, // camelCase
               size_small: labelSmall,
             })}
             htmlFor={name}

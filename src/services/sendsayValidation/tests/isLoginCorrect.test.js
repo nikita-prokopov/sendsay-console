@@ -6,7 +6,8 @@ describe('isLoginCorrect', () => {
     const answer = isLoginCorrect('Никита');
 
     // Проверка
-    expect(answer).toBeFalsy();
+    expect(answer).toBeFalsy(); // "" unde null 0
+    // expect(answer).toBe(false); // === false - strict
   });
 
   test('Возвращает false если передали пустую строку', () => {

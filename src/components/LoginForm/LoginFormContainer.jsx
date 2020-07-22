@@ -12,6 +12,9 @@ import { authorization } from '../../services/sendsay';
 import { isStringEmpty } from '../../services/validation';
 import { delayIfNeccesary } from '../../services/delay';
 
+// https://formik.org/docs/overview
+// https://github.com/final-form/react-final-form
+// pristine/dirty/touched/focused
 const LoginFormContainer = ({ className, setPage, setUser }) => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -22,13 +25,14 @@ const LoginFormContainer = ({ className, setPage, setUser }) => {
   });
 
   const [inputs, setInputs] = useState({
-    login: { value: '', isValid: true },
+    login: { value: '', isValid: true }, // pristine/dirty/touched/focused
     sublogin: { value: '', isValid: true },
     password: { value: '', isValid: true },
   });
 
   const { login, sublogin, password } = inputs;
 
+  // handleBlur + handleFocus
   const handleChange = useCallback(
     e => {
       const { name, value } = e.target;
@@ -63,7 +67,12 @@ const LoginFormContainer = ({ className, setPage, setUser }) => {
     });
   }
 
+  // validator can accept fields as argument to easy test
+  // validater can be outside of component
   function validation() {
+    // what if this function is async?
+    // what if validation is async?
+    // state machine concept
     let isValid = true;
 
     if (!isLoginCorrect(login.value)) {
@@ -81,6 +90,8 @@ const LoginFormContainer = ({ className, setPage, setUser }) => {
       isValid = false;
     }
 
+    // prepare object and then set state
+
     if (!isValid) {
       throw new Error();
     }
@@ -92,8 +103,20 @@ const LoginFormContainer = ({ className, setPage, setUser }) => {
     try {
       validation();
     } catch {
+      // dont eat errors
       return;
     }
+
+    // try {
+    //   validation(fields);
+    // } catch (err) {
+    //   if (err instanceof ValidationError) {
+    //     setFormStateInvalid(err.errors); // {email: "Is Required"}
+    //     return
+    //   }
+
+    //   throw err
+    // }
 
     setIsLoading(true);
 
@@ -102,14 +125,18 @@ const LoginFormContainer = ({ className, setPage, setUser }) => {
       password: password.value,
     };
 
+    // if too much logic here
+    // normalize function for data transfer object
     if (!isStringEmpty(sublogin.value)) {
       options.sublogin = sublogin.value;
     }
 
+    // no need as component unmounts
     clearInputs();
 
     try {
       const user = await delayIfNeccesary(1000, authorization.bind(null, options));
+      // https://rangle.slides.com/yazanalaboudi/deck#/10/0/0
       setUser(user);
       clearInputs();
       setIsLoading(false);
@@ -120,7 +147,11 @@ const LoginFormContainer = ({ className, setPage, setUser }) => {
         title: 'Вход не вышел',
         details: err,
       });
+    } finally {
       setIsLoading(false);
+      // setTimeout(() => {
+      //   setIsLoading(false);
+      // }, 1000);
     }
   }
 

@@ -5,11 +5,14 @@ import UIFullScreenButton from '../../UI/FullScreenButton';
 
 const FullScreenButton = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);
+  // https://github.com/streamich/react-use/blob/master/docs/useFullscreen.md
 
   async function setFullScreen() {
     try {
       await document.body.requestFullscreen();
+      // document.addEventListener("smth...")
       setIsFullScreen(true);
+      // at least log error
     } catch {}
   }
 

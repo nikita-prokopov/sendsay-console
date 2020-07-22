@@ -40,7 +40,7 @@ const RequestButton = ({
   return (
     <ComplexButton
       isSuccess={isSuccess}
-      text={actionName}
+      text={actionName} // truncate with ...
       onButtonClick={handleItemClick}
       onDotsClick={onDotsClick}
       className='History-RequestButton'

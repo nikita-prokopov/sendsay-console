@@ -11,6 +11,10 @@ const App = ({ page, authFromSession }) => {
     authFromSession();
   }, [authFromSession]);
 
+  // if (!page) {
+  //   return null
+  // }
+
   return (
     <div className='App'>
       {page === 'console' && <Console />}

@@ -2,7 +2,7 @@ import React from 'react';
 import { cn } from '@bem-react/classname';
 import Logo from '../UI/Logo';
 import LoginFormContainer from '../LoginForm';
-import GithubLink from '../UI/GithubLink';
+import GithubLink from '../UI/GithubLink/GithubLink';
 import './Auth.scss';
 
 const classes = cn('Auth');

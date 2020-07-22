@@ -12,6 +12,9 @@ const classes = cn('History');
 const History = ({ className, history, setHistory }) => {
   function getHistory() {
     const json = sessionStorage.getItem('sendsayHistory');
+    // 1. saga for side effect
+    // 2. https://github.com/rt2zz/redux-persist (sessionStorage/Cookie/localStorage/AsyncStorage)
+    // redux -> component props
 
     if (json) {
       return JSON.parse(json);
@@ -19,6 +22,10 @@ const History = ({ className, history, setHistory }) => {
 
     return [];
   }
+
+  // sesstionStorage -> redux -> component props
+  // sesstionStorage -> saga -> redux -> component props
+  // component event -> action -> saga -> sesstionStorage+redux
 
   function saveHistory() {
     const json = JSON.stringify(history);
@@ -31,6 +38,7 @@ const History = ({ className, history, setHistory }) => {
   }, [setHistory]);
 
   useEffect(() => {
+    // call saveHistory on append/remove item from history
     window.addEventListener('beforeunload', saveHistory);
     return () => window.removeEventListener('beforeunload', saveHistory);
   });

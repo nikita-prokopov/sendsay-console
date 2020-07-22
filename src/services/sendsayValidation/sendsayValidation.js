@@ -3,6 +3,9 @@ import { isContainCyrillic, isEmail, isStringEmpty } from '../validation';
 
 const FORBIDDEN_SYMBOLS = /[!"#$%&'()\-*+\,.\/:;<=\]?@\[>\\^`{|}~]/;
 
+// validator.js
+
+// this validator fits better to LoginForm Feature
 export const isLoginCorrect = login => {
   if (isStringEmpty(login) || isContainCyrillic(login)) {
     return false;

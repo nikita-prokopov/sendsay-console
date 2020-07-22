@@ -6,6 +6,7 @@ import rootReducer from './rootReducer';
 import rootSaga from './redux-saga/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
+// options onError: (error: Error, { sagaStack: string })
 
 const store = createStore(rootReducer, compose(applyMiddleware(sagaMiddleware)));
 
